@@ -1,99 +1,12 @@
-<!DOCTYPE html>
-<html lang="en" class="dark scroll-smooth">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Creative Portfolio | Filmmaker</title>
-
-<script src="https://cdn.tailwindcss.com"></script>
-<link href="https://api.fontshare.com/v2/css?f[]=satoshi@700,500,400&display=swap" rel="stylesheet">
-
-<style>
-body {
-    font-family: 'Satoshi', sans-serif;
-    transition: background-color 0.6s ease;
-}
-
-/* --- Animated Grain --- */
-.grain {
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: 50;
-    opacity: 0.035;
-    background-image: url('https://upload.wikimedia.org/wikipedia/commons/7/76/1k_Grain_Texture.png');
-    animation: grainMove 8s steps(10) infinite;
-}
-
-@keyframes grainMove {
-    0%,100% { transform: translate(0,0) }
-    25% { transform: translate(-5%,5%) }
-    50% { transform: translate(5%,-5%) }
-    75% { transform: translate(-5%,-5%) }
-}
-
-/* --- Ambient Soft Glow --- */
-.ambient-light {
-    position: fixed;
-    inset: 0;
-    z-index: -1;
-    background:
-        radial-gradient(circle at 20% 30%, rgba(255,120,0,0.05), transparent 40%),
-        radial-gradient(circle at 80% 70%, rgba(120,0,255,0.04), transparent 40%);
-}
-
-/* --- Morph Portrait --- */
-.portrait-morph {
-    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-    animation: morph 10s ease-in-out infinite;
-    overflow: hidden;
-}
-
-@keyframes morph {
-    0%,100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
-    50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
-}
-
-/* --- Subtle Card Depth --- */
-.depth-card {
-    backdrop-filter: blur(6px);
-    background: rgba(255,255,255,0.02);
-    transition: all .4s ease;
-}
-
-.depth-card:hover {
-    transform: translateY(-6px);
-}
-
-/* --- Cinematic Divider --- */
-.soft-divider {
-    height: 1px;
-    background: linear-gradient(to right, transparent, rgba(255,255,255,0.08), transparent);
-}
-
-/* Smooth fade-in */
-.fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 1s ease;
-}
-.fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-</style>
-</head>
-
 <body class="bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 selection:bg-orange-500/30">
 
 <div class="ambient-light"></div>
 <div class="grain"></div>
 
 <nav class="fixed top-0 w-full p-8 flex justify-between items-center z-40 backdrop-blur-md">
-    <div class="flex gap-4 text-sm tracking-widest uppercase opacity-50">
-        <a href="#" class="hover:opacity-100 transition">IG</a>
-        <a href="#" class="hover:opacity-100 transition">EM</a>
+    <div class="flex gap-6 text-sm tracking-widest uppercase opacity-50">
+        <a href="#" class="hover:opacity-100 hover:tracking-[0.2em] transition-all">Instagram</a>
+        <a href="mailto:your@email.com" class="hover:opacity-100 hover:tracking-[0.2em] transition-all">Email</a>
     </div>
     <button onclick="toggleTheme()" class="text-xs tracking-widest uppercase opacity-50 hover:opacity-100">
         [ Mode ]
@@ -102,102 +15,133 @@ body {
 
 <main class="max-w-6xl mx-auto px-6 pt-32 pb-32">
 
-<!-- HERO -->
-<section class="grid md:grid-cols-12 gap-16 items-end mb-40 fade-in">
-    <div class="md:col-span-5 relative">
-        <div class="portrait-morph w-72 h-96 bg-zinc-200 dark:bg-zinc-800 grayscale hover:grayscale-0 transition-all duration-700 shadow-2xl">
-            <img src="your-photo.jpg" class="w-full h-full object-cover">
+    <section class="grid md:grid-cols-12 gap-16 items-end mb-40 fade-in">
+        <div class="md:col-span-5 relative">
+            <div class="portrait-morph w-72 h-96 bg-zinc-200 dark:bg-zinc-800 grayscale hover:grayscale-0 transition-all duration-700 shadow-2xl overflow-hidden">
+                <img src="your-photo.jpg" class="w-full h-full object-cover shadow-inner">
+            </div>
+            <div class="absolute -bottom-6 left-8 px-4 py-2 bg-white/10 backdrop-blur-xl border border-white/10 rounded-full flex items-center gap-3">
+                <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse shadow-[0_0_10px_rgba(74,222,128,0.5)]"></span>
+                <span class="text-[10px] uppercase tracking-widest font-bold">Available for Commission</span>
+            </div>
         </div>
-    </div>
 
-    <div class="md:col-span-7 space-y-8">
-        <h1 class="text-7xl md:text-8xl font-bold tracking-[-0.04em] leading-none">
-            Your Name.
-        </h1>
-        <p class="text-xl opacity-70 max-w-lg leading-relaxed">
-            Filmmaker & Creative Director. Crafting visual narratives that linger in the space between dreams and reality.
-        </p>
-    </div>
-</section>
+        <div class="md:col-span-7 space-y-8">
+            <h1 class="text-7xl md:text-8xl font-bold tracking-[-0.04em] leading-none">
+                Your Name.
+            </h1>
+            <p class="text-xl opacity-70 max-w-lg leading-relaxed">
+                Director & Visionary. Capturing the textures of reality through a cinematic lens.
+            </p>
+        </div>
+    </section>
 
-<div class="soft-divider my-24"></div>
+    <section class="grid md:grid-cols-12 gap-10 mb-48 fade-in">
+        <div class="md:col-span-7">
+            <h2 class="text-xs uppercase tracking-[0.4em] opacity-40 italic mb-8">The Dream</h2>
+            <p class="text-3xl font-light leading-snug">
+                Beyond the screen, I am a builder of worlds. My ultimate goal is to bridge the gap between commercial precision and the raw, unfiltered soul of independent filmmaking.
+            </p>
+        </div>
+        <div class="md:col-span-5 flex flex-col justify-end items-end">
+            <a href="https://t.me/yourusername" class="group text-right">
+                <span class="text-xs uppercase tracking-[0.2em] opacity-40 block mb-2">Start a conversation</span>
+                <span class="text-4xl font-light group-hover:italic transition-all">Telegram Inbox →</span>
+                <div class="h-[1px] w-0 group-hover:w-full bg-orange-500 transition-all duration-700"></div>
+            </a>
+        </div>
+    </section>
 
-<!-- VISION -->
-<section class="grid md:grid-cols-2 gap-20 mb-40 fade-in">
-    <div class="space-y-8">
-        <h2 class="text-xs uppercase tracking-[0.4em] opacity-40 italic">The Vision</h2>
-        <p class="text-2xl leading-snug">
-            I believe every frame should hold a secret. Capturing the unspoken and the fragile space between moments.
-        </p>
-    </div>
+    <section class="space-y-6 fade-in">
+        <h2 class="text-xs uppercase tracking-[0.4em] opacity-40 mb-12">Selected Portfolio</h2>
 
-    <div class="flex items-end justify-end">
-        <a href="https://t.me/yourusername" class="group">
-            <span class="text-4xl font-light group-hover:italic transition-all">
-                Send a Telegram →
-            </span>
-            <div class="h-[1px] w-0 group-hover:w-full bg-current transition-all duration-500"></div>
+        <div onclick="openProject('TV Series Name', 'Directed & Written by me. A 6-part journey into...', 'CBE Bank', 'cbe-logo.png')" 
+             class="group py-12 px-8 depth-card border border-zinc-200/10 rounded-3xl transition flex justify-between items-center cursor-pointer">
+            <div>
+                <span class="text-[10px] uppercase tracking-widest opacity-40 block mb-2">Lead Direction / Writing</span>
+                <h3 class="text-5xl group-hover:translate-x-4 transition-transform duration-500">The TV Series</h3>
+            </div>
+            <span class="text-2xl font-thin opacity-0 group-hover:opacity-100 transition-opacity">View Case Study</span>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+            <div class="group p-10 depth-card border border-zinc-200/10 rounded-3xl hover:bg-orange-500/5 transition cursor-pointer">
+                <span class="text-[10px] uppercase opacity-40 mb-4 block">Commercial Directing</span>
+                <h4 class="text-3xl">CBE Bank Global</h4>
+            </div>
+            <div class="group p-10 depth-card border border-zinc-200/10 rounded-3xl hover:bg-blue-500/5 transition cursor-pointer">
+                <span class="text-[10px] uppercase opacity-40 mb-4 block">Music Video</span>
+                <h4 class="text-3xl">Visual Album 2024</h4>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 pt-10 text-center">
+            <div class="py-6 border border-zinc-200/5 rounded-xl opacity-50 hover:opacity-100 transition cursor-default text-xs uppercase tracking-widest">Copywriting</div>
+            <div class="py-6 border border-zinc-200/5 rounded-xl opacity-50 hover:opacity-100 transition cursor-default text-xs uppercase tracking-widest">Translation</div>
+            <div class="py-6 border border-zinc-200/5 rounded-xl opacity-50 hover:opacity-100 transition cursor-default text-xs uppercase tracking-widest">Production</div>
+            <div class="py-6 border border-zinc-200/5 rounded-xl opacity-50 hover:opacity-100 transition cursor-default text-xs uppercase tracking-widest">Asst. Directing</div>
+        </div>
+    </section>
+
+    <section class="mt-48 grid md:grid-cols-3 gap-10 fade-in">
+        <div class="p-10 depth-card border border-zinc-200/10 rounded-2xl group">
+            <h4 class="opacity-40 italic mb-6 group-hover:text-orange-400 transition">Poetry</h4>
+            <p class="text-sm opacity-70 leading-relaxed">Words that don't need a camera to be seen.</p>
+        </div>
+        <a href="https://letterboxd.com/yourlink" class="p-10 depth-card border border-zinc-200/10 rounded-2xl block group">
+            <h4 class="opacity-40 italic mb-6 group-hover:text-green-400 transition">Letterboxd</h4>
+            <p class="text-sm opacity-70 leading-relaxed underline">My cinematic influence list →</p>
         </a>
-    </div>
-</section>
-
-<div class="soft-divider my-24"></div>
-
-<!-- WORKS -->
-<section class="space-y-8 fade-in">
-    <h2 class="text-xs uppercase tracking-[0.4em] opacity-40 mb-12">Selected Works</h2>
-
-    <div class="group py-16 px-6 depth-card border border-zinc-800 rounded-2xl transition">
-        <span class="text-xs opacity-40 block mb-4">01 / Directing & Writing</span>
-        <h3 class="text-4xl group-hover:translate-x-6 transition-transform duration-500">
-            The TV Series Title
-        </h3>
-    </div>
-
-    <div class="group py-16 px-6 depth-card border border-zinc-800 rounded-2xl transition">
-        <h3 class="text-4xl opacity-40 group-hover:opacity-100 transition">
-            Creative Direction
-        </h3>
-    </div>
-</section>
-
-<div class="soft-divider my-24"></div>
-
-<!-- INTERESTS -->
-<section class="grid md:grid-cols-3 gap-10 fade-in">
-    <div class="p-10 depth-card border border-zinc-800 rounded-2xl">
-        <h4 class="opacity-50 italic mb-6">Poetry & Verse</h4>
-        <p class="text-sm opacity-70">Rhythmic explorations of daily observation.</p>
-    </div>
-
-    <div class="p-10 depth-card border border-zinc-800 rounded-2xl">
-        <h4 class="opacity-50 italic mb-6">Letterboxd</h4>
-        <p class="text-sm underline cursor-pointer">What I'm watching lately →</p>
-    </div>
-
-    <div class="p-10 depth-card border border-zinc-800 rounded-2xl">
-        <h4 class="opacity-50 italic mb-6">Melody Writing</h4>
-        <p class="text-sm opacity-70">Sonic drafts for future scores.</p>
-    </div>
-</section>
+        <div class="p-10 depth-card border border-zinc-200/10 rounded-2xl group">
+            <h4 class="opacity-40 italic mb-6 group-hover:text-purple-400 transition">Song Writing</h4>
+            <p class="text-sm opacity-70 leading-relaxed">Melodic structures for future visual scores.</p>
+        </div>
+    </section>
 
 </main>
+
+<div id="projectModal" class="fixed inset-0 z-[60] bg-zinc-950/90 backdrop-blur-2xl flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-500">
+    <button onclick="closeProject()" class="absolute top-10 right-10 text-4xl font-thin hover:rotate-90 transition-transform">&times;</button>
+    <div class="max-w-4xl w-full px-10 grid md:grid-cols-2 gap-12">
+        <div class="aspect-video bg-zinc-900 rounded-lg overflow-hidden border border-white/10">
+            <img id="modalImg" src="" class="w-full h-full object-cover opacity-50">
+        </div>
+        <div class="space-y-6">
+            <div id="modalCompanyLogo" class="w-12 h-12 bg-white rounded-full p-2 flex items-center justify-center grayscale"></div>
+            <h2 id="modalTitle" class="text-5xl font-bold"></h2>
+            <p id="modalDesc" class="text-lg opacity-60"></p>
+            <p class="text-xs uppercase tracking-widest opacity-40">Client: <span id="modalClient"></span></p>
+        </div>
+    </div>
+</div>
 
 <script>
 function toggleTheme() {
     document.documentElement.classList.toggle('dark');
 }
 
-// Fade-in on scroll
+// Modal Logic
+function openProject(title, desc, client, logo) {
+    const modal = document.getElementById('projectModal');
+    document.getElementById('modalTitle').innerText = title;
+    document.getElementById('modalDesc').innerText = desc;
+    document.getElementById('modalClient').innerText = client;
+    modal.classList.remove('opacity-0', 'pointer-events-none');
+}
+
+function closeProject() {
+    document.getElementById('projectModal').classList.add('opacity-0', 'pointer-events-none');
+}
+
+// Fade-in observer (Keep your existing one)
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('visible');
         }
     });
-});
+}, { threshold: 0.1 });
 document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 </script>
 
 </body>
-</html>
